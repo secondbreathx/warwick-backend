@@ -70,7 +70,7 @@ router.get(`/date`, async (req, res) =>{
 
 router.post('/file', upload.single('jsonFile'), async (req, res) => {
     const kpiValueList = JSON.parse(req.file.buffer.toString('utf-8'));
-    axios.get('http://localhost:3003/api/v1/teams').then((response) => {
+    axios.get('https://warwick-backend-34369cb85885.herokuapp.com/api/v1/teams').then((response) => {
         let teamList = response.data;
         const teamMap = new Map();
         teamList.forEach(team => {
